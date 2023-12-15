@@ -1,4 +1,5 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+
 Background & Objectives
 We want to build a simple airbnb clone (like this one : https://rails-simple-airbnb.herokuapp.com/). These should be all the user stories of our app:
 
