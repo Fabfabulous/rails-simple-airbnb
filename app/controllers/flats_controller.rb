@@ -6,6 +6,14 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @markers = []
+    @markers.push(
+      {
+        lat: @flat.latitude,
+        lng: @flat.longitude
+      }
+    )
   end
 
   def new
@@ -22,6 +30,7 @@ class FlatsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -45,6 +54,6 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:name, :description, :address, :price_per_night, :number_of_guests)
+    params.require(:flat).permit(:name, :description, :address, :price_per_night, :number_of_guests, :photo)
   end
 end

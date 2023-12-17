@@ -1,15 +1,37 @@
-<div>
-  <h1><%= @flat.name %></h1>
-  <p><%= @flat.address %></p>
+<div class="back-picture"
+  style="background-image: url('<%= cl_image_path @flat.photo.key, height: 350, crop: :fill %>')"
+>
+</div>
+<div class="show-main">
+  <div class="show-main-right">
+    <div class="flat-show-card">
+      <h1><%= @flat.name %></h1>
+      <p><%= @flat.address %></p>
+    </div>
+
+    <div class="flat-show-card">
+      <h3>A bit more about this flat...</h2>
+      <p><%= @flat.description %></p>
+      <div style="width: 100%; height: 560px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+
+  <div class="show-main-left">
+    <div class="flat-show-card">
+      <h3>Details</h3>
+      <div class="flat-show-card-detail">
+        <p><%= @flat.number_of_guests %> people</p>
+        <p><%= @flat.price_per_night %> €</p>
+      </div>
+    </div>
+    <div>
+      <%= render "shared/booking", locals: {flat: @flat, booking: @booking} %>
+    </div>
+  </div>
 </div>
 
-<div>
-  <h2>A bit more about this flat...</h2>
-  <p><%= @flat.description %></p>
-</div>
-
-<div>
-  <h3>Details</h3>
-  <p><%= @flat.number_of_guests %> people</p>
-  <p><%= @flat.price_per_night %> €</p>
-</div>
+<%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-gradient" %>

@@ -1,0 +1,44 @@
+.back-picture {
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.show-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 80%; /* Ajustez la largeur selon vos préférences */
+  margin: -60px auto; /* Définit automatiquement une marge égale à gauche et à droite pour centrer le conteneur */
+}
+
+.flat-show-card {
+  width: 100%;
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+
+  h1, h3 {
+    font-weight: bold;
+  }
+}
+
+.show-main-right {
+  width: 100%;
+}
+
+.show-main-left {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.flat-show-card-detail {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+}

@@ -4,24 +4,22 @@
   <div class="cards">
     <% @flats.each do | flat | %>
       <div class="card">
-        <%= image_tag("flat_interior.jpg", alt: "Flat interior", class: "image-preview") %>
+        <%= link_to flat_path(flat), class:"text-decoration-none" do %>
+          <%= image_tag("flat_interior.jpg", alt: "Flat interior", class: "image-preview") %>
+        <% end %>
         <div class="card-title">
           <h4><%= flat.name %></h4>
           <p><%= flat.address %></p>
         </div>
         <div class="card-info">
-          <div class = "d-flex">
+          <div class = "card-info-value">
             <i class="fa-solid fa-people-group"></i>
             <p> <%= flat.number_of_guests %></p>
           </div>
-          <div class = "d-flex">
+          <div class = "card-info-value">
             <i class="fa-solid fa-euro-sign"></i>
             <p><%= flat.price_per_night %></p>
           </div>
-        </div>
-        <div class="card-bottom">
-          <%= link_to "More info", flat_path(flat), class: "btn btn-primary btn-sm" %>
-          <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     <% end %>
