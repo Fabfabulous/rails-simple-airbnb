@@ -1,7 +1,6 @@
-<h1>All our flats</h1>
-<p>All our <%= @flats.count %> flats</p>
-
 <div class="container">
+  <h1>All our flats</h1>
+  <p>All our <%= @flats.count %> flats</p>
   <div class="cards">
     <% @flats.each do | flat | %>
       <div class="card">
@@ -21,12 +20,8 @@
           </div>
         </div>
         <div class="card-bottom">
-          <div>
-            <%= link_to "More info", flat_path(flat), class: "btn btn-primary btn-sm" %>
-          </div>
-          <div>
-            <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-primary btn-sm" %>
-          </div>
+          <%= link_to "More info", flat_path(flat), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     <% end %>
